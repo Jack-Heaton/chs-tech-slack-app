@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+
+html, body {
+  background-color: #003366;
+}
+
+.gradient-border {
+  border: 6px solid;  
+  border-image-source: repeating-linear-gradient(to right, #b5c889, #dbe1d9 30px, #4f7b73 60px, #b5c889 90px);
+  border-image-slice: 1;
+  animation: gradient-border-animation 5s ease infinite;
+}
+
+.gradient-background {
+  background: radial-gradient(circle, hsl(78, 36%, 66%), #9ac88a, #4f7b73);
+  animation: gradient-animation 18s ease infinite;
+}
+
+.gradient-mask {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+@keyframes gradient-border-animation {
+  0% {
+    border-image-slice: 1;
+  }
+  50% {
+    border-image-slice: 20;
+  }
+  100% {
+    border-image-slice: 1;
+  }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+    background-size: 100% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+    background-size: 200% 200%;
+  }
+  100% {
+    background-position: 0% 50%;
+    background-size: 100% 100%;
+  }
+}
