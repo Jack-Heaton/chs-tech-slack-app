@@ -1,11 +1,11 @@
 <script lang="ts">
-	let { href, children } = $props();
+	let {  children, component = 'a', ...rest } = $props();
 </script>
 
-<a {href} class="relative w-fit bg-black/70 p-8 text-white">
+<svelte:element this={component} {...rest} class={["relative w-fit bg-black/70 p-8", rest?.disabled ? 'text-gray-500' : 'text-white', rest.class]}>
 	{@render children()}
-	<div class="gradient-halo gradient-background absolute inset-0 text-white"></div>
-</a>
+	<div class={["gradient-halo gradient-background absolute inset-0 text-white", rest?.disabled ? 'filter grayscale transition-filter duration-500' : '']}></div>
+</svelte:element>
 
 <style>
 	.gradient-halo {

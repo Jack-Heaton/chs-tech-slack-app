@@ -1,0 +1,1 @@
+<a href="/code-of-conduct" target="_blank" class="text-center text-indigo-300">View Charleston Tech Slack Code of Conduct here</a>
