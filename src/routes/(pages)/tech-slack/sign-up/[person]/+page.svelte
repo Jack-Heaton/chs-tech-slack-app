@@ -6,31 +6,30 @@
 	import { page } from '$app/state';
 	let checklistItems = $state([
 		{
+			label:
+				'I agree to contribute positively to the Charleston Technology Slack Community. I am not joining this community soley to troll other users or post spam',
+			name: 'I agree to contribute positively to the Charleston Technology Slack Community. I am not joining this Slack soley to troll other users or post spam',
+			group: 'No'
+		},
+		{
 			label: 'I agree to abide by the Charleston Technology Code of Conduct',
 			name: 'I agree to abide by the Charleston Technology Code of Conduct',
 			HelperComponent: CodeOfConductHelper,
-			group: 'No',
+			group: 'No'
 		}
 	]);
-
 </script>
 
 <div class="flex flex-row flex-wrap gap-4">
 	<MegaHeader lines={['TECH SLACK', 'SIGNUP']} />
 </div>
 
-<Section
-	paragraphs={[
-		'We welcome recruiters to join the CHS Tech Slack Community.',
-		'Please check each box below that you agree with:'
-	]}
-/>
+<Section paragraphs={['Please check each box below that you agree with:']} />
 
-
-<ChecklistForm 
+<ChecklistForm
 	backUrl="/tech-slack"
-	nextUrl="/tech-slack/join"
-	bind:checklistItems={checklistItems}
+	nextUrl="/tech-slack/sign-up/join"
+	bind:checklistItems
 	additionalFormData={{
 		role: page.params.person
 	}}

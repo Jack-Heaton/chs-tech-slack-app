@@ -10,7 +10,7 @@
 
 	const req = page.url.searchParams.get('req');
 
-	if(!req) {
+	if (!req) {
 		redirect(302, '/tech-slack');
 	}
 
@@ -25,15 +25,13 @@
 	let name = $state('');
 	let email = $state('');
 
-	function javascriptCallback(e: CustomEvent<{ token: string; preClearanceObtained: boolean; }>) {
+	function javascriptCallback(e: CustomEvent<{ token: string; preClearanceObtained: boolean }>) {
 		callbackSuccess = true;
 	}
 
 	let submitDisabled = $derived(() => {
 		return !callbackSuccess || !name || !email;
 	});
-
-
 </script>
 
 <div class="flex flex-col gap-4">
@@ -47,7 +45,7 @@
 	]}
 />
 
-<form action="/tech-slack/request-complete" method="POST" class="flex flex-col gap-6">
+<form action="/tech-slack/sign-up/request-complete" method="POST" class="flex flex-col gap-6">
 	<Input label="Name" name="name" bind:value={name} />
 	<Input label="Email" name="email" type="email" bind:value={email} />
 
@@ -57,6 +55,6 @@
 
 	<div class="flex flex-row-reverse justify-between gap-6">
 		<LinkButton element="button" type="submit" disabled={submitDisabled()}>Submit</LinkButton>
-		<LinkButton href="/">Cancel</LinkButton>
+		<LinkButton href="/tech-slack">Cancel</LinkButton>
 	</div>
 </form>

@@ -4,9 +4,7 @@
 	import Section from '$lib/Section.svelte';
 </script>
 
-	<MegaHeader lines={['CHARLESTON', 'TECH SLACK']} />
-
-
+<MegaHeader lines={['CHARLESTON', 'TECH SLACK']} />
 
 <Section
 	paragraphs={[
@@ -15,12 +13,6 @@
 	]}
 />
 
-<Section paragraphs={[' To start: Which of the following best describes you?']} />
-<div class="flex flex-col gap-4 text-2xl/tight text-white">
-	<LinkButton href="/tech-slack/professional" class="w-full">I'm a technology professional.</LinkButton>
-	<LinkButton href="/tech-slack/student" class="w-full">I'm a student in a technology field.</LinkButton>
-	<LinkButton href="/tech-slack/interested" class="w-full">I'm interested in technology.</LinkButton>
-	<LinkButton href="/tech-slack/recruiter" class="w-full">I'm a recruiter of technology professionals.</LinkButton>
-	<LinkButton href="/tech-slack/spammer" class="w-full">I'm a spammy spammer.</LinkButton>
-	<LinkButton href="/tech-slack/other" class="w-full">I'm something else.</LinkButton>
-</div>
+<LinkButton href="/tech-slack/sign-up">Get Access</LinkButton>
+<LinkButton href="/tech-slack/channel-guide">Channel Guide</LinkButton>
+<LinkButton href="/">Return Home</LinkButton>
